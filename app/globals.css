@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root{--bg1:#f7f3ec;--bg2:#e8e5f4;--bg3:#f1e6df;--panel:rgb(255 253 249/.82);--line:#ddd6ca;--fg:#2a2622;--mut:#7b746a;--acc:#5b5bd6;--accfg:#fff;--field:#fffdf9}
+.dark{--bg1:#15161a;--bg2:#1d1b2b;--bg3:#241c1c;--panel:rgb(30 30 37/.82);--line:#34353e;--fg:#e8e6e1;--mut:#9a958d;--acc:#9090f2;--accfg:#14141a;--field:#1a1b21}
+body{background:linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3)) fixed;color:var(--fg);font-family:ui-sans-serif,system-ui,sans-serif}
+.panel{background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.btn{display:inline-flex;align-items:center;gap:.375rem;border:1px solid var(--line);border-radius:.5rem;padding:.3rem .55rem;font-size:.75rem;background:var(--field);cursor:pointer}
+.btn:hover{border-color:var(--acc)}
+.btn[data-on=true]{background:var(--acc);color:var(--accfg);border-color:var(--acc)}
+.btn:focus-visible,.field:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.field{width:100%;border:1px solid var(--line);border-radius:.5rem;background:var(--field);padding:.4rem .6rem;font-size:.8rem}
+.lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
